@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../../assets/images/logo.jpg'
 import './Navbar.css'
 
-function Navbar() {
+function Navbar({name, stid}) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -18,8 +18,8 @@ function Navbar() {
           </ul>
           {/* Details */}
           <div className='studentDetails'>
-            <div className='greetings'>Hello Om !</div>
-            <div className='stid'>302285569</div>
+            <div className='greetings'>Hello {name} !</div>
+            <div className='stid'>{stid}</div>
           </div>
         </div>
       </div>
