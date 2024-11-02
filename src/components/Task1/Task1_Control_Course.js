@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { TASK1 } from "../../utility/task1Const";
 
-function Task1_Control_NoSchedule(props) {
+function Task1_Control_Course(props) {
     function getInitialState(){
         return {
             selectedPriorityOption: ""
@@ -89,10 +89,10 @@ function Task1_Control_NoSchedule(props) {
     );
 }
 
-Task1_Control_NoSchedule.propTypes = {
+Task1_Control_Course.propTypes = {
     course: PropTypes.object.isRequired,
     handleUpdatePriority: PropTypes.func.isRequired,
     handleUpdateSection: PropTypes.func.isRequired
 }
 
-export default Task1_Control_NoSchedule
+export default Task1_Control_Course

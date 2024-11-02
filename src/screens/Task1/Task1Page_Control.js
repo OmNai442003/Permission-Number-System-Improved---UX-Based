@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Task1_Control_NoSchedule from "../../components/Task1/Task1_Control_NoSchedule";
+import Task1_Control_Course from "../../components/Task1/Task1_Control_Course";
 import { TASK1 } from "../../utility/task1Const";
 
 function Task1Page_Control() {
@@ -124,7 +124,7 @@ function Task1Page_Control() {
         return (
             <>
             <hr/>
-            <Task1_Control_NoSchedule
+            <Task1_Control_Course
                 course={course}
                 handleUpdatePriority={handleUpdatePriority}
                 handleUpdateSection={handleUpdateSection}
