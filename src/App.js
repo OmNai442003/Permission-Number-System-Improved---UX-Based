@@ -2,12 +2,13 @@
 
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import LandingPage from './screens/Landing/LandingPage';
 import UserProfile from './screens/UserProfile/UserProfile';
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<div>This the tested</div>
+    element: <LandingPage/>
   },
   {
     path:"/userprofile",
