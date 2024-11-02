@@ -4,7 +4,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from './screens/Landing/LandingPage';
 import UserProfile from './screens/UserProfile/UserProfile';
-import Task1Page from './screens/Task1/Task1Page';
+import Task1Page_Control from './screens/Task1/Task1Page_Control';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     element: <UserProfile/>
   },
   {
-    path:"/task1",
-    element: <Task1Page/>
+    path:"/task1A",
+    element: <Task1Page_Control/>
   }
 ]);
 
