@@ -6,6 +6,7 @@ import LandingPage from './screens/Landing/LandingPage';
 import UserProfile from './screens/UserProfile/UserProfile';
 import Task1Page_Control from './screens/Task1/Task1Page_Control';
 import Task1Page_Experiment from './screens/Task1/Task1Page_Experiment';
+import Login from './screens/login/login';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path:"/task1B",
     element: <Task1Page_Experiment/>
+  },
+  {
+    path:"/login",
+    element: <Login/>
   }
 ]);
 
