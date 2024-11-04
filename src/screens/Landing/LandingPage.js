@@ -10,6 +10,8 @@ const LandingPage = () => {
                 <Link to="/userprofile">User Profile</Link>
                 <br />
                 <Link to="/task1A">Task 1 (Control)</Link>
+                <br />
+                <Link to="/task1B">Task 1 (Experiment)</Link>
             </p>
         </>
     )
