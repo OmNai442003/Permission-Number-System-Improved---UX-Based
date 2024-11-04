@@ -8,6 +8,7 @@ import Task1Page_Control from './screens/Task1/Task1Page_Control';
 import Task1Page_Experiment from './screens/Task1/Task1Page_Experiment';
 import Login from './screens/login/login';
 import Task2Page_Control from './screens/Task2/Task2Page_Control';
+import Task2Page_Experiment from './screens/Task2/Task2Page_Experiment';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path:"/task2A",
     element: <Task2Page_Control/>
+  },
+  {
+    path:"/task2B",
+    element: <Task2Page_Experiment/>
   },
   {
     path:"/login",

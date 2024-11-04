@@ -7,6 +7,10 @@ export const TASK2 = {
         }
     },
     experiment: {
-
+        corePriority: {
+            unset: 0,
+            high: 1,
+            low: 2
+        }
     }
 }
