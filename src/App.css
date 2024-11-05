@@ -1,3 +1,94 @@
 .disabled{
     text-decoration: line-through;
 }
+
+.task-container {
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+}
+
+.task-instruction {
+    margin-top:15px;
+}
+
+.course {
+    margin-bottom:5px;
+    padding:5px;
+    border-style:solid;
+    border-color:black;
+    border-width:2px;
+}
+
+.course-name {
+    font-size:125%;
+}
+
+.course-desc {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.course > ul > li {
+    list-style-type: none;
+}
+
+.course > ul > li > input {
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+}
+
+.control-preference-instructions {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 90%;
+
+}
+.control-preference-text {
+    font-size: 85%;
+    font-style:italic;
+}
+
+.control-preference-table {
+    margin-left:auto;
+    margin-right:auto;
+}
+.control-preference-table > tbody > tr > td,
+.control-preference-table > thead > tr > th {
+    padding: 5px;
+}
+
+
+
+.sortable-preference-instructions {
+    margin-bottom: 15px;
+}
+.sortable-preference-background {
+    max-width: 50%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+}
+
+.sortable-preference-item {
+    border-style:dotted;
+    border-width: 1px;
+    background-color: white;
+    border-color: black;
+    text-align:center;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 0 0 0;
+}
+
+.sortable-preference-course-name {
+    font-size:125%;
+}
+
+.sortable-preference-course-desc {
+    font-style: italic;
+    margin-bottom: 10px;
+}

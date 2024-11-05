@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Task1_Control_Course from "../../components/Task1/Task1_Control_Course";
 import { TASK1 } from "../../utility/task1Const";
+import Styled from "styled-components";
 
 function Task1Page_Control() {
+    const Container = Styled.div``;
     const [stuff, updateStuff] = useState([
         {
             id: 1,
@@ -122,21 +124,23 @@ function Task1Page_Control() {
     }
     function renderRow(course){
         return (
-            <>
-            <hr/>
             <Task1_Control_Course
+                key={course.id}
                 course={course}
                 handleUpdatePriority={handleUpdatePriority}
                 handleUpdateSection={handleUpdateSection}
             />
-            </>
         );
     };
 
     return (
-        <>
-            <h1>Task 1 (Control)</h1>
-            <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
+        <Container className="task-container">
+            <div className="task-instruction">
+                <h1>Task 1 (Control)</h1>
+                <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
+            </div>
+
+            <hr />
 
             {stuff.map(renderRow)}
 
@@ -144,7 +148,7 @@ function Task1Page_Control() {
             <br />
             <button onClick={print}>Debug to Console</button>
 
-        </>
+        </Container>
     )
 }
 

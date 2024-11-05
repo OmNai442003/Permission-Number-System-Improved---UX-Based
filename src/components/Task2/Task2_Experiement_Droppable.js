@@ -19,8 +19,10 @@ function Task2_Experiment_Droppable(props){
                                 {...provided.draggableProps}
                                 {...provided.dragHandleProps}
                                 ref={provided.innerRef}
+                                className="sortable-preference-item"
                             >
-                                {course.name} {course.description}
+                                <div className="sortable-preference-course-name">{course.name}</div> 
+                                <div className="sortable-preference-course-desc">{course.description}</div>
                             </DragContainer>
                         )}
                     
@@ -36,6 +38,8 @@ function Task2_Experiment_Droppable(props){
                     <CourseList
                         ref={provided.innerRef}
                         {...provided.droppableProps}
+                        className="sortable-preference-background"
+
                     >
                         {props.courses.map(renderCourse)}
                         {provided.placeholder}

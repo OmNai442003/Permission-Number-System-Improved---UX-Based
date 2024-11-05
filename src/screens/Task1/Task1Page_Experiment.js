@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Task1_Experiment_Course from "../../components/Task1/Task1_Experiment_Course";
 import { TASK1 } from "../../utility/task1Const";
+import Styled from "styled-components";
 
 function Task1Page_Experiment() {
+    const Container = Styled.div``;
     const [stuff, updateStuff] = useState([
         {
             id: 1,
@@ -186,8 +188,8 @@ function Task1Page_Experiment() {
         let startB = itemB.startHour * 100 + itemB.startMinute;
         let endB = itemB.endHour * 100 + itemB.endMinute;
 
-        console.log("itemA start/end", itemA.days, startA, endA);
-        console.log("itemB start/end", itemB.days, startB, endB);
+        // console.log("itemA start/end", itemA.days, startA, endA);
+        // console.log("itemB start/end", itemB.days, startB, endB);
 
         if (startA < startB){
             if(startB < endA) return true;
@@ -200,13 +202,13 @@ function Task1Page_Experiment() {
     }
 
     function hasDayOverlap(itemA, itemB){
-        console.log("hasDayOverlap?")
+        // console.log("hasDayOverlap?")
         for(var i = 0; i < itemA.days.length; i++){
             for(var j = 0; j < itemB.days.length; j++){
                 if(itemA.days[i] === itemB.days[j]) return true;
             }
         }
-        console.log("hasDayOverlap false");
+        // console.log("hasDayOverlap false");
         return false;
     }
 
@@ -217,20 +219,22 @@ function Task1Page_Experiment() {
     }
     function renderRow(course){
         return (
-            <>
-            <hr/>
             <Task1_Experiment_Course
+                key={course.id}
                 course={course}
                 handleUpdateSection={handleUpdateSection}
             />
-            </>
         );
     };
 
     return (
-        <>
-            <h1>Task 1 (Experiment)</h1>
-            <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
+        <Container className="task-container">
+            <div className="task-instruction">
+                <h1>Task 1 (Experiment)</h1>
+                <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
+            </div>
+
+            <hr />
 
             {stuff.map(renderRow)}
 
@@ -238,7 +242,7 @@ function Task1Page_Experiment() {
             <br />
             <button onClick={print}>Debug to Console</button>
 
-        </>
+        </Container>
     )
 }
 
