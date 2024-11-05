@@ -4,17 +4,7 @@ import { Helmet } from 'react-helmet';
 const HeadComponent = () => {
   return (
     <Helmet>
-      <link href="https://fresnostate.edu/index.html" rel="canonical" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta charset="utf-8" />
-      <meta name="robots" content="index,follow" />
-      <meta name="googlebot" content="index,follow" />
-      <meta property="og:url" content="//fresnostate.edu" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Fresno State Campus Login Services" />
-      <meta property="og:description" content="CAS - Central Authentication Service" />
-      <meta property="og:site_name" content="Fresno State Campus Login Services" />
-      <link href="https://omniresources.fresnostate.edu/images/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+      
       
       {/* Bootstrap CSS */}
       <link href="https://omniresources.fresnostate.edu/css/bootstrap.css" rel="stylesheet" />
@@ -32,6 +22,13 @@ const HeadComponent = () => {
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" />
       <script src="https://kit.fontawesome.com/a93c75ed0e.js" crossOrigin="anonymous" />
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-QR2QRL14Q5" />
+
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://omniresources.fresnostate.edu/js/bootstrap.js"></script>
+      <script src="https://omniresources.fresnostate.edu/js/scripts.js"></script>
+      <script src="https://omniresources.fresnostate.edu/js/slick.min.js"></script>
+      <script src="https://omniresources.fresnostate.edu/js/zoom.js"></script>
     </Helmet>
   );
 };

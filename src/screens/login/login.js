@@ -1,36 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import HeadComponent from '../../components/head/HeadComponent';
 
+
 function Login() {
-  useEffect(() => {
-    const scripts = [
-      'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js',
-      'https://kit.fontawesome.com/a93c75ed0e.js',
-      'https://www.googletagmanager.com/gtag/js?id=G-QR2QRL14Q5',
-      'https://code.jquery.com/jquery-3.3.1.min.js',
-      'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
-      'https://omniresources.fresnostate.edu/js/bootstrap.js',
-      'https://omniresources.fresnostate.edu/js/scripts.js',
-      'https://omniresources.fresnostate.edu/js/slick.min.js',
-      'https://omniresources.fresnostate.edu/js/zoom.js'
-    ];
-
-    const scriptElements = scripts.map((src) => {
-      const script = document.createElement('script');
-      script.src = src;
-      script.async = true;
-      document.body.appendChild(script);
-      return script;
-    });
-
-    return () => {
-      // Cleanup: Remove each script when the component unmounts
-      scriptElements.forEach((script) => {
-        document.body.removeChild(script);
-      });
-    };
-  }, []); // Empty dependency array ensures this runs only once on mount
-
   return (
 <>
         <HeadComponent/>
