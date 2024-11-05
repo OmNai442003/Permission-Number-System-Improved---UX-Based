@@ -1,8 +1,11 @@
-import { useState } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import Task2_Experiment_Course from "../../components/Task2/Task2_Experiment_Course";
+import Task2_Experiment_OrderableList from "../../components/Task2/Task2_Experiment_OrderableList";
 import { TASK2 } from "../../utility/task2Const";
 
 function Task2Page_Experiment() {
+    const [preference, setPreference] = useState([]);
     const [courses, updateCourses] = useState([
         {
             id: 1,
@@ -87,6 +90,19 @@ function Task2Page_Experiment() {
         }
     ]);
 
+    useEffect(() => {
+        setPreference(courses.reduce(function(result, c) {
+            if (c.priority !== TASK2.experiment.corePriority.unset){
+                return result.concat({
+                    id: c.id,
+                    name: c.name,
+                    description: c.description
+                })
+            }
+            return result;
+        }, []));
+    }, [courses]);
+
     function handleUpdatePriority(id, value) {
         // console.log("handleUpdatePriority",id, value);
         updateCourses(
@@ -95,6 +111,8 @@ function Task2Page_Experiment() {
             )
 
         )
+
+
     }
 
     function handleUpdatePreference(id, value) {
@@ -103,7 +121,6 @@ function Task2Page_Experiment() {
             courses.map(item =>
                 (item.id == id) ? ({...item, preference: value}) : (item)
             )
-
         )
     }
 
@@ -130,13 +147,14 @@ function Task2Page_Experiment() {
 
     function print(e) {
         e.preventDefault();
+        console.log(preference);
         console.log(courses);
 
     }
 
     function renderRow(course){
         return (
-            <>
+            <React.Fragment key={course.id}>
             <hr/>
             <Task2_Experiment_Course
                 course={course}
@@ -144,9 +162,24 @@ function Task2Page_Experiment() {
                 handleUpdateSection={handleUpdateSection}
                 handleUpdatePreference={handleUpdatePreference}
             />
-            </>
+            </React.Fragment>
         );
     };
+
+    function onDragEnd(result) {
+        console.log(result);
+        const { source, destination } = result;
+
+        if (!destination) return;
+        if (source.index === destination.index) return;
+
+        
+        const newPreference = Array.from(preference);
+        let temp = newPreference.splice(source.index, 1);
+        newPreference.splice(destination.index, 0, temp[0])
+        
+        setPreference(newPreference);
+    }
 
     return (
         <>
@@ -154,6 +187,14 @@ function Task2Page_Experiment() {
             <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
 
             {courses.map(renderRow)}
+
+            <br />
+            <br />
+
+            <Task2_Experiment_OrderableList
+                courses={preference}
+                onDragEnd={onDragEnd}
+                />
 
             <br />
             <br />
