@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 import Task2_Experiment_Course from "../../components/Task2/Task2_Experiment_Course";
 import Task2_Experiment_OrderableList from "../../components/Task2/Task2_Experiment_OrderableList";
 import { TASK2 } from "../../utility/task2Const";
+import Styled from "styled-components";
 
 function Task2Page_Experiment() {
+    const Container = Styled.div``;
+    const [state, setState] = useState({
+        isSorting: false
+    });
     const [preference, setPreference] = useState([]);
     const [courses, updateCourses] = useState([
         {
@@ -145,6 +150,14 @@ function Task2Page_Experiment() {
         )
     }
 
+    function handleUpdateSortingState(newState){
+        console.log(newState);
+        setState({
+            ...state,
+            isSorting: newState
+        });
+    }
+
     function print(e) {
         e.preventDefault();
         console.log(preference);
@@ -154,20 +167,18 @@ function Task2Page_Experiment() {
 
     function renderRow(course){
         return (
-            <React.Fragment key={course.id}>
-            <hr/>
             <Task2_Experiment_Course
+                key={course.id}
                 course={course}
                 handleUpdatePriority={handleUpdatePriority}
                 handleUpdateSection={handleUpdateSection}
                 handleUpdatePreference={handleUpdatePreference}
             />
-            </React.Fragment>
         );
     };
 
     function onDragEnd(result) {
-        console.log(result);
+        // console.log(result);
         const { source, destination } = result;
 
         if (!destination) return;
@@ -182,25 +193,55 @@ function Task2Page_Experiment() {
     }
 
     return (
-        <>
-            <h1>Task 2 (Experiment)</h1>
-            <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
+        <Container className="task-container">
+            <div className="task-instruction">
+                            <h1>Task 2 (Experiment)</h1>
+                            <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
+                        </div>
 
-            {courses.map(renderRow)}
+                        <hr />
+            {
+                (!state.isSorting)
+                ?(
+                    <>
+                        
+
+                        {courses.map(renderRow)}
+
+                        <br />
+                        <br />
+                        <button onClick={() => handleUpdateSortingState(true)}>Next</button>
+                    </>
+                )
+                :(
+                    <>
+                        <div className="sortable-preference-instructions">
+                            The classes you selected are listed below.  Please drag and drop the classes to put them in your preferred order from highest preference on the top to lowest on the bottom.
+                        </div>
+
+                        <Task2_Experiment_OrderableList
+                            courses={preference}
+                            onDragEnd={onDragEnd}
+                        />
+
+                        <br />
+                        <br />
+
+                        <button onClick={() => handleUpdateSortingState(false)}>Back</button>
+                    </>
+                )
+            }
+            
+
+            
 
             <br />
             <br />
 
-            <Task2_Experiment_OrderableList
-                courses={preference}
-                onDragEnd={onDragEnd}
-                />
 
-            <br />
-            <br />
             <button onClick={print}>Debug to Console</button>
 
-        </>
+        </Container>
     )
 }
 

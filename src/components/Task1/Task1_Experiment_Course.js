@@ -35,30 +35,29 @@ function Task1_Experiment_Course(props) {
 
     function renderSelectableSchedule(courseId, sections) {
         return sections.map(section => (
-            <ul>
-                <li className={(section.isEnabled)?(""):("disabled")}>
-                    <input 
-                        type="checkbox" 
-                        checked={!!section.isSelected} 
-                        onChange={() => props.handleUpdateSection(courseId, section)}
-                        disabled={!section.isEnabled}
-                    />
-                    {renderScheduleRow(section)}
-                </li>
-            </ul>
+            <li 
+                key={section.id}
+                className={(section.isEnabled)?(""):("disabled")}>
+                <input 
+                    type="checkbox" 
+                    checked={!!section.isSelected} 
+                    onChange={() => props.handleUpdateSection(courseId, section)}
+                    disabled={!section.isEnabled}
+                />
+                {renderScheduleRow(section)}
+            </li>
         ));
     }
 
     return (
-        <>
-            <div className="task1 control no-schedule" key={props.course.id}>
-
-                <p>{props.course.name}</p>
-                <p>{props.course.description}</p>
-                <p>Select the lecture/lab time that you wish to enroll in:</p>
+        <div className="course" key={props.course.id}>
+            <div className="course-name">{props.course.name}</div>
+            <div className="course-desc">{props.course.description}</div>
+            <p>Select the lecture/lab time that you wish to enroll in:</p>
+            <ul>
                 {renderSelectableSchedule(props.course.id, props.course.sections)}
-            </div>
-        </>
+            </ul>
+        </div>
     );
 }
 
