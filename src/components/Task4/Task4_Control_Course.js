@@ -48,7 +48,7 @@ function Task4_Control_Course(props) {
         if (prerequisites.length > 0) {
             return (
                 <div className="prerequisites">
-                    <strong>Prerequisites:</strong>
+                    Prerequisites:
                     <ul>
                         {prerequisites.map(prereqId => {
                             const prereqCourse = props.allCourses.find(course => course.id === prereqId);

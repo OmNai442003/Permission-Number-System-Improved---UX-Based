@@ -60,7 +60,7 @@
             }
         ],
         "priority": "unset",
-        "prerequisites": [1,3] 
+        "prerequisites": [1] 
     },
     {
         "id": 3,
