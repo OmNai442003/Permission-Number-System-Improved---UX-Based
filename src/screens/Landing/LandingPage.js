@@ -16,6 +16,8 @@ const LandingPage = () => {
                 <Link to="/task2A">Task 2 (Control)</Link>
                 <br />
                 <Link to="/task2B">Task 2 (Experiment)</Link>
+                <br />
+                <Link to="/task4A">Task 4 (Control)</Link>
             </p>
         </>
     )
