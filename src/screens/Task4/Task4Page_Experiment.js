@@ -1,108 +1,108 @@
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import Task4_Experiment_Course from "../../components/Task4/Task4_Experiment_Course";
 import { TASK4 } from "../../utility/task4Const";
-import Styled from "styled-components";
-import coursesData from "../../assets/json/courses.json"
+import styled from "styled-components";
+import coursesData from "../../assets/json/courses.json";
 import userData from "../../assets/json/data.json";
 
+const Container = styled.div`
+    padding: 20px;
+    background-color: #f9f9f9;
+`;
+
+const Header = styled.h1`
+    font-size: 2em;
+    color: #333;
+`;
+
+const Button = styled.button`
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    &:hover {
+        background-color: #0056b3;
+    }
+`;
 
 function Task4Page_Experiment() {
-    const Container = Styled.div``;
     const [course, updateCourse] = useState([]);
-    const [user, setUser] = useState(null); // State to hold user data
-
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
-
-        const fetchedUserData = userData[0]; // Assuming user data is an array
+        const fetchedUserData = userData[0];
         setUser(fetchedUserData);
 
-        // Map through the imported courses and set the priority
         const updatedCourses = coursesData.map(item => ({
             ...item,
-            priority: TASK4.experiment.corePriority.unset // Set the initial priority to unset
+            priority: TASK4.experiment.corePriority.unset
         }));
         updateCourse(updatedCourses);
     }, []);
 
     function hasCompletedPrerequisites(course) {
         if (!user || !user.completedCourses) return false;
-
-        const prerequisiteIds = course.prerequisites || []; // Assuming the course has a preRequisites field
+        const prerequisiteIds = course.prerequisites || [];
         return prerequisiteIds.every(prereqId =>
             user.completedCourses.some(completed => completed.id === prereqId)
         );
     }
 
     function handleUpdatePriority(id, value) {
-        // console.log("handleUpdatePriority",id, value);
         updateCourse(
             course.map(item =>
-                (item.id == id) ? ({...item, priority: value}) : (item)
+                item.id === id ? { ...item, priority: value } : item
             )
-
-        )
+        );
     }
 
-    function handleUpdateSection(courseId, sectionId, value) {
-        // console.log("handleUpdateSection", courseId, sectionId, value);
+    function handleUpdateSection(courseId, sectionId) {
         updateCourse(
-            course.map(
-                item => (item.id == courseId) ? (
-                    {
-                        ...item, 
-                        sections: (
-                            item.sections.map(
-                                sec => (sec.id == sectionId) ? (
-                                    {
-                                        ...sec,
-                                        isSelected: !sec.isSelected
-                                    }
-                                ) : (sec)
-                            ))
-                    }) : (item)
+            course.map(item =>
+                item.id === courseId
+                    ? {
+                          ...item,
+                          sections: item.sections.map(sec =>
+                              sec.id === sectionId
+                                  ? { ...sec, isSelected: !sec.isSelected }
+                                  : sec
+                          )
+                      }
+                    : item
             )
-        )
+        );
     }
 
     function print(e) {
         e.preventDefault();
         console.log(course);
-
     }
-    function renderRow(course){
-        const prerequisitesMet = hasCompletedPrerequisites(course);
-        const isDisabled = !prerequisitesMet; // Determine if course should be disabled
-
-        return (
-            <Task4_Experiment_Course
-                key={course.id}
-                course={course}
-                allCourses={coursesData}
-                isDisabled={isDisabled}
-                handleUpdatePriority={handleUpdatePriority}
-                handleUpdateSection={handleUpdateSection}
-            />
-        );
-    };
 
     return (
-        <Container className="task-container">
-            <div className="task-instruction">
-                <h1>Task 4 (Experiment)</h1>
-                <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
-            </div>
-
+        <Container>
+            <Header>Task 4 (Experiment)</Header>
+            <p>
+                For each course you are trying to sign up for, please answer the
+                one or two questions about that course. If you don't plan to take a
+                particular course, just leave the question(s) about it unanswered.
+            </p>
             <hr />
-
-            {course.map(renderRow)}
-
-            <br />
-            <br />
-            <button onClick={print}>Debug to Console</button>
-
+            {course.map(item => (
+                <Task4_Experiment_Course
+                    key={item.id}
+                    course={item}
+                    allCourses={coursesData}
+                    isDisabled={!hasCompletedPrerequisites(item)}
+                    handleUpdatePriority={handleUpdatePriority}
+                    handleUpdateSection={handleUpdateSection}
+                />
+            ))}
+            <Button onClick={print}>Debug to Console</Button>
         </Container>
-    )
+    );
 }
 
-export default Task4Page_Experiment
+export default Task4Page_Experiment;

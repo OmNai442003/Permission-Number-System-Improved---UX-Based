@@ -1,11 +1,32 @@
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import Task4_Control_Course from "../../components/Task4/Task4_Control_Course";
 import { TASK4 } from "../../utility/task4Const";
-import Styled from "styled-components";
-import coursesData from "../../assets/json/courses.json"
+import styled from "styled-components";
+import { Helmet } from "react-helmet";
+import coursesData from "../../assets/json/courses.json";
 
 function Task4Page_Control() {
-    const Container = Styled.div``;
+    const Container = styled.div`
+        padding: 20px;
+        background-color: #f4f4f9;
+        font-family: Arial, sans-serif;
+    `;
+    const Header = styled.h1`
+        font-size: 1.8em;
+        color: #333;
+    `;
+    const Button = styled.button`
+        padding: 10px 20px;
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover {
+            background-color: #005bb5;
+        }
+    `;
+
     const [course, updateCourse] = useState([]);
 
     useEffect(() => {
@@ -18,32 +39,22 @@ function Task4Page_Control() {
     }, []);
 
     function handleUpdatePriority(id, value) {
-        // console.log("handleUpdatePriority",id, value);
         updateCourse(
             course.map(item =>
-                (item.id == id) ? ({...item, priority: value}) : (item)
+                (item.id === id) ? ({...item, priority: value}) : (item)
             )
-
         )
     }
 
-    function handleUpdateSection(courseId, sectionId, value) {
-        // console.log("handleUpdateSection", courseId, sectionId, value);
+    function handleUpdateSection(courseId, sectionId) {
         updateCourse(
-            course.map(
-                item => (item.id == courseId) ? (
-                    {
-                        ...item, 
-                        sections: (
-                            item.sections.map(
-                                sec => (sec.id == sectionId) ? (
-                                    {
-                                        ...sec,
-                                        isSelected: !sec.isSelected
-                                    }
-                                ) : (sec)
-                            ))
-                    }) : (item)
+            course.map(item =>
+                (item.id === courseId) ? ({
+                    ...item,
+                    sections: item.sections.map(sec =>
+                        (sec.id === sectionId) ? ({ ...sec, isSelected: !sec.isSelected }) : sec
+                    )
+                }) : item
             )
         )
     }
@@ -51,37 +62,25 @@ function Task4Page_Control() {
     function print(e) {
         e.preventDefault();
         console.log(course);
-
     }
-    function renderRow(course){
-        return (
-            <Task4_Control_Course
-                key={course.id}
-                course={course}
-                allCourses={coursesData}
-                handleUpdatePriority={handleUpdatePriority}
-                handleUpdateSection={handleUpdateSection}
-            />
-        );
-    };
 
     return (
-        <Container className="task-container">
-            <div className="task-instruction">
-                <h1>Task 4 (Control)</h1>
-                <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
-            </div>
-
+        <Container>
+            <Header>Task 4 (Control)</Header>
+            <p>For each course you are trying to sign up for, please answer the one or two questions about that course. If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
             <hr />
-
-            {course.map(renderRow)}
-
-            <br />
-            <br />
-            <button onClick={print}>Debug to Console</button>
-
+            {course.map(item => (
+                <Task4_Control_Course
+                    key={item.id}
+                    course={item}
+                    allCourses={coursesData}
+                    handleUpdatePriority={handleUpdatePriority}
+                    handleUpdateSection={handleUpdateSection}
+                />
+            ))}
+            <Button onClick={print}>Debug to Console</Button>
         </Container>
-    )
+    );
 }
 
-export default Task4Page_Control
+export default Task4Page_Control;
