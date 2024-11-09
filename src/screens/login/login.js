@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import HeadComponent from '../../components/head/HeadComponent';
-import users from '../../assets/json/allrecords.json';
+import users from '../../assets/json/userRecords.json';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
     const submitHandler = (e) => {
         e.preventDefault();
         console.log(users);
-        navigate()
+        // navigate();
     };
 
     return (
@@ -197,14 +197,14 @@ function Login() {
 
                                 <div class=" align-items-center col-8 col-md-5 col-lg-7 justify-content-center">
 
-                                    <form id="login" name="login" method="post" onsubmit="onSubmit()" className='formsize'>
+                                    <form id="login" name="login" method="post" onsubmit={submitHandler} className='formsize'>
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="username">Username</label>
-                                            <input type="text" id="username" name="username" class="form-control form-control-lg" autocomplete="off" autocorrect="off" autocapitalize="off" autoFocus /></div>
+                                            <input type="text" id="username" name="username" onChange={(e) => setUserName(e.target.value)} class="form-control form-control-lg" autocomplete="off" autocorrect="off" autocapitalize="off" autoFocus /></div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="password">Password</label>
-                                            <input type="password" id="password" name="password" class="form-control form-control-lg" autocomplete="off" autocorrect="off" autocapitalize="off" /></div>
+                                            <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)} class="form-control form-control-lg" autocomplete="off" autocorrect="off" autocapitalize="off" /></div>
 
                                         <div class="pt-1 mb-4">
                                             <button class="btn btn-info btn-lg btn-block btn-blue" type="submit">Login</button>

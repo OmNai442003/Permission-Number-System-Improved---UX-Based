@@ -1,0 +1,27 @@
+[
+    {
+        "userId": "123456789",
+        "username": "jhon_doe",
+        "password": "jhon_doe"
+    },
+    {
+        "userId": "987654321",
+        "username": "alex_liu",
+        "password": "alex_liu"
+    },
+    {
+        "userId": "147258369",
+        "username": "nathen_hawe",
+        "password": "nathen_hawe"
+    },
+    {
+        "userId": "963852741",
+        "username": "hardik_talati",
+        "password": "hardik_talati"
+    },
+    {
+        "userId": "123789456",
+        "username": "honey_bunny",
+        "password": "honey_bunny"
+    }
+]
