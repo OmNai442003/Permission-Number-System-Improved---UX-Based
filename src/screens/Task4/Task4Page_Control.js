@@ -2,31 +2,33 @@ import { useState, useEffect } from "react";
 import Task4_Control_Course from "../../components/Task4/Task4_Control_Course";
 import { TASK4 } from "../../utility/task4Const";
 import styled from "styled-components";
-import { Helmet } from "react-helmet";
 import coursesData from "../../assets/json/courses.json";
 
-function Task4Page_Control() {
-    const Container = styled.div`
-        padding: 20px;
-        background-color: #f4f4f9;
-        font-family: Arial, sans-serif;
-    `;
-    const Header = styled.h1`
-        font-size: 1.8em;
-        color: #333;
-    `;
-    const Button = styled.button`
-        padding: 10px 20px;
-        background-color: #0066cc;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        &:hover {
-            background-color: #005bb5;
-        }
-    `;
+const Container = styled.div`
+    padding: 20px;
+    background-color: #f9f9f9;
+`;
 
+const Header = styled.h1`
+    font-size: 2em;
+    color: #333;
+`;
+
+const Button = styled.button`
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    &:hover {
+        background-color: #0056b3;
+    }
+`;
+
+function Task4Page_Control() {
+   
     const [course, updateCourse] = useState([]);
 
     useEffect(() => {

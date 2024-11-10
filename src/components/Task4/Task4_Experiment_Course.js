@@ -139,12 +139,13 @@ function Task4_Experiment_Course(props) {
                             type="radio"
                             value="high"
                             checked={props.course.priority === TASK4.experiment.corePriority.high}
-                            onClick={() => !props.isDisabled && props.handleUpdatePriority(
+                            onClick={(e) => {e.stopPropagation(); !props.isDisabled && props.handleUpdatePriority(
                                 props.course.id, 
                                 props.course.priority === TASK4.experiment.corePriority.high 
                                     ? TASK4.experiment.corePriority.unset 
                                     : TASK4.experiment.corePriority.high
                             )}
+                        }
                             disabled={props.isDisabled}
                         /> I need to take this class. If I'm allowed to register, I will definitely take it.
                     </RadioLabel>

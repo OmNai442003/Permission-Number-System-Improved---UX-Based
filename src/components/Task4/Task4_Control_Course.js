@@ -61,8 +61,7 @@ const RadioLabel = styled.label`
 function Task4_Control_Course(props) {
     const [isExpanded, setIsExpanded] = useState(false);
 
-    function toggleExpand(e) {
-        e.stopPropagation();  // Prevent event from propagating to other elements
+    function toggleExpand() {
         setIsExpanded((prev) => !prev);
     }
 
@@ -92,6 +91,7 @@ function Task4_Control_Course(props) {
                             type="checkbox"
                             checked={!!section.isSelected}
                             onChange={() => props.handleUpdateSection(courseId, section.id)}
+                            onClick={(e) => {e.stopPropagation(); }}
                         />
                         {renderScheduleRow(section)}
                     </SectionItem>
@@ -104,11 +104,10 @@ function Task4_Control_Course(props) {
         <CourseContainer>
             <CourseHeader onClick={toggleExpand}>
                 <CourseName>{props.course.name}</CourseName>
-                <ToggleButton onClick={toggleExpand}>
+                <ToggleButton onClick={(e) => { e.stopPropagation(); toggleExpand(); }}>
                     {isExpanded ? "-" : "+"}
                 </ToggleButton>
             </CourseHeader>
-
             {isExpanded && (
                 <CourseDetails>
                     <p>{props.course.description}</p>
@@ -139,7 +138,7 @@ function Task4_Control_Course(props) {
                             type="radio"
                             value="high"
                             checked={props.course.priority === TASK4.control.corePriority.high}
-                            onChange={() => props.handleUpdatePriority(props.course.id, props.course.priority === TASK4.control.corePriority.high ? TASK4.control.corePriority.unset : TASK4.control.corePriority.high)}
+                            onClick ={(e) =>{e.stopPropagation();  props.handleUpdatePriority(props.course.id, props.course.priority === TASK4.control.corePriority.high ? TASK4.control.corePriority.unset : TASK4.control.corePriority.high)}}
                         /> I need to take this class. If I'm allowed to register, I will definitely take it.
                     </RadioLabel>
                     <RadioLabel>
@@ -147,7 +146,7 @@ function Task4_Control_Course(props) {
                             type="radio"
                             value="low"
                             checked={props.course.priority === TASK4.control.corePriority.low}
-                            onChange={() => props.handleUpdatePriority(props.course.id, props.course.priority === TASK4.control.corePriority.low ? TASK4.control.corePriority.unset : TASK4.control.corePriority.low)}
+                            onClick={(e) =>{e.stopPropagation();  props.handleUpdatePriority(props.course.id, props.course.priority === TASK4.control.corePriority.low ? TASK4.control.corePriority.unset : TASK4.control.corePriority.low)}}
                         /> I would like to take this class, but can wait a semester if necessary.
                     </RadioLabel>
                 </CourseDetails>
