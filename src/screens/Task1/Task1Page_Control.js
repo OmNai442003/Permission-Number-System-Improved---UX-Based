@@ -2,9 +2,17 @@ import { useState } from "react";
 import Task1_Control_Course from "../../components/Task1/Task1_Control_Course";
 import { TASK1 } from "../../utility/task1Const";
 import Styled from "styled-components";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
 
 function Task1Page_Control() {
+    const navigate = useNavigate();
     const Container = Styled.div``;
+    const [details, updateDetails] = useState({
+        taskName: "Task1_Control",
+        startDateTime: new Date()
+    });
+    
     const [stuff, updateStuff] = useState([
         {
             id: 1,
@@ -117,11 +125,6 @@ function Task1Page_Control() {
         )
     }
 
-    function print(e) {
-        e.preventDefault();
-        console.log(stuff);
-
-    }
     function renderRow(course){
         return (
             <Task1_Control_Course
@@ -132,6 +135,19 @@ function Task1Page_Control() {
             />
         );
     };
+
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            endDateTime,
+            data: stuff
+        });
+
+        navigate("/");
+    }
 
     return (
         <Container className="task-container">
@@ -146,7 +162,7 @@ function Task1Page_Control() {
 
             <br />
             <br />
-            <button onClick={print}>Debug to Console</button>
+            <button onClick={save}>Save</button>
 
         </Container>
     )

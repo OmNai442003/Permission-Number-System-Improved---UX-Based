@@ -4,9 +4,16 @@ import Task2_Experiment_Course from "../../components/Task2/Task2_Experiment_Cou
 import Task2_Experiment_OrderableList from "../../components/Task2/Task2_Experiment_OrderableList";
 import { TASK2 } from "../../utility/task2Const";
 import Styled from "styled-components";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
 
 function Task2Page_Experiment() {
+    const navigate = useNavigate();
     const Container = Styled.div``;
+    const [details, updateDetails] = useState({
+        taskName: "Task2_Experiment",
+        startDateTime: new Date()
+    });
     const [state, setState] = useState({
         isSorting: false
     });
@@ -158,13 +165,6 @@ function Task2Page_Experiment() {
         });
     }
 
-    function print(e) {
-        e.preventDefault();
-        console.log(preference);
-        console.log(courses);
-
-    }
-
     function renderRow(course){
         return (
             <Task2_Experiment_Course
@@ -190,6 +190,19 @@ function Task2Page_Experiment() {
         newPreference.splice(destination.index, 0, temp[0])
         
         setPreference(newPreference);
+    }
+
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            endDateTime,
+            data: courses
+        });
+
+        navigate("/");
     }
 
     return (
@@ -228,19 +241,14 @@ function Task2Page_Experiment() {
                         <br />
 
                         <button onClick={() => handleUpdateSortingState(false)}>Back</button>
+                        <br />
+                        <br />
+
+
+                        <button onClick={save}>Save</button>
                     </>
                 )
             }
-            
-
-            
-
-            <br />
-            <br />
-
-
-            <button onClick={print}>Debug to Console</button>
-
         </Container>
     )
 }

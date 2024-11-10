@@ -2,9 +2,17 @@ import { useState } from "react";
 import Task1_Experiment_Course from "../../components/Task1/Task1_Experiment_Course";
 import { TASK1 } from "../../utility/task1Const";
 import Styled from "styled-components";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
 
 function Task1Page_Experiment() {
+    const navigate = useNavigate();
     const Container = Styled.div``;
+    const [details, updateDetails] = useState({
+        taskName: "Task1_Experiment",
+        startDateTime: new Date()
+    });    
+
     const [stuff, updateStuff] = useState([
         {
             id: 1,
@@ -212,11 +220,6 @@ function Task1Page_Experiment() {
         return false;
     }
 
-    function print(e) {
-        e.preventDefault();
-        console.log(stuff);
-
-    }
     function renderRow(course){
         return (
             <Task1_Experiment_Course
@@ -226,6 +229,19 @@ function Task1Page_Experiment() {
             />
         );
     };
+
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            endDateTime,
+            data: stuff
+        });
+
+        navigate("/");
+    }
 
     return (
         <Container className="task-container">
@@ -240,7 +256,7 @@ function Task1Page_Experiment() {
 
             <br />
             <br />
-            <button onClick={print}>Debug to Console</button>
+            <button onClick={save}>Save</button>
 
         </Container>
     )
