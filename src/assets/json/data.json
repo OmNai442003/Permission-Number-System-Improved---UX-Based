@@ -1,14 +1,35 @@
 [
     {
-        "id": 302285569,
-        "name": "Jhon Doe",
-        "emailId": "dummy123@mail.fresnostate.edu",
+        "id": 123456789,
+        "name": "Alex Liu",
+        "emailId": "alex_Liu123@mail.fresnostate.edu",
         "ssn": "-",
         "course": "Masters Computer Science",
         "gender": "Male",
+        "dateOfBirth":"1 Nov 1966",
         "address": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, porro.",
         "phoneNumber": "(012) 345 6789",
-        "emergencycontactnumber": "(987) 654 3210",
+        "emergencycontactnumber": "(987) 987 9870",
+        "completedCourses": [
+            {
+                "id": 1,
+                "name": "Class A",
+                "completionDate": "2023-05-15",
+                "grade": "A"
+            }
+        ]
+    },
+    {
+        "id": 987654321,
+        "name": "Nathen Hawe",
+        "emailId": "nathen_Hame123@mail.fresnostate.edu",
+        "ssn": "-",
+        "course": "Masters Computer Science",
+        "gender": "Male",
+        "dateOfBirth":"1 Nov 1966",
+        "address": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore, porro.",
+        "phoneNumber": "(987) 654 3210",
+        "emergencycontactnumber": "(123) 123 1234",
         "completedCourses": [
             {
                 "id": 1,

@@ -14,39 +14,39 @@ import Login from './screens/Login/Login';
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element: <LandingPage/>
+    path: "/",
+    element: <Login />
   },
   {
-    path:"/userprofile",
-    element: <UserProfile/>
+    path: "/landing",
+    element: <LandingPage />
   },
   {
-    path:"/task1A",
-    element: <Task1Page_Control/>
+    path: "/userprofile",
+    element: <UserProfile />
   },
   {
-    path:"/task1B",
-    element: <Task1Page_Experiment/>
+    path: "/task1A",
+    element: <Task1Page_Control />
   },
   {
-    path:"/task2A",
-    element: <Task2Page_Control/>
+    path: "/task1B",
+    element: <Task1Page_Experiment />
   },
   {
-    path:"/task2B",
-    element: <Task2Page_Experiment/>
-  },{
-    path:"/task4A",
-    element: <Task4Page_Control/>
+    path: "/task2A",
+    element: <Task2Page_Control />
   },
   {
-    path:"/task4B",
-    element: <Task4Page_Experiment/>
+    path: "/task2B",
+    element: <Task2Page_Experiment />
+  }, {
+    path: "/task4A",
+    element: <Task4Page_Control />
   },
   {
-    path:"/login",
-    element: <Login /> 
+    path: "/task4B",
+    element: <Task4Page_Experiment />
   }
 ]);
 

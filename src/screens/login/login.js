@@ -1,7 +1,7 @@
 // Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import users from './user.json';
+import users from '../../assets/json/userRecords.json';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -10,15 +10,15 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // const user = users.find(
-        //     (user) => user.username === username && user.password === password
-        // );
+        const user = users.find(
+            (user) => user.username === username && user.password === password
+        );
 
-        // if (user) {
-        //     navigate('/landing', { state: { userId: user.userId } });
-        // } else {
-        //     alert('Invalid credentials');
-        // }
+        if (user) {
+            navigate('/landing', { state: { userId: user.userId } });
+        } else {
+            alert('Invalid credentials');
+        }
     };
 
     return (
