@@ -4,6 +4,7 @@ import { TASK1 } from "../../utility/task1Const";
 import Styled from "styled-components";
 import * as dataRepo from "../../utility/dataRepo";
 import { useNavigate } from "react-router-dom";
+import courseData from "../../assets/json/task1ControlData.json"
 
 function Task1Page_Control() {
     const navigate = useNavigate();
@@ -13,86 +14,7 @@ function Task1Page_Control() {
         startDateTime: new Date()
     });
     
-    const [stuff, updateStuff] = useState([
-        {
-            id: 1,
-            name: "Class A",
-            description: "A class on the topic of 'A'.",
-            sections:[
-                {
-                    lecture:{
-                        days: ['M', 'W', 'F'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 11,
-                        endMinute: 50,
-                    }
-                }
-            ],
-            priority: TASK1.control.corePriority.unset
-        },
-        {
-            id: 2,
-            name: "Class B",
-            description: "A class on the topic of 'B'.",
-            sections:[
-                {
-                    id: 1,
-                    isSelected: false,
-                    lecture: {
-                        days: ['T', 'Th'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 12,
-                        endMinute: 15,
-                    },
-                    lab: {
-                        days: ['M'],
-                        startHour: 9,
-                        startMinute: 0,
-                        endHour: 10,
-                        endMinute: 50
-                    }
-                },
-                {
-                    id: 2,
-                    isSelected: false,
-                    lecture: {
-                        days: ['M', 'W', 'F'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 11,
-                        endMinute: 50,
-                    },
-                    lab: {
-                        days: ['Th'],
-                        startHour: 13,
-                        startMinute: 0,
-                        endHour: 14,
-                        endMinute: 50
-                    }
-                }
-            ],
-            priority: TASK1.control.corePriority.unset
-        },
-        {
-            id: 3,
-            name: "Class C",
-            description: "A class on the topic of 'C'.",
-            sections: [
-                {
-                    lecture: {
-                        days: ['W'],
-                        startHour: 14,
-                        startMinute: 0,
-                        endHour: 16,
-                        endMinute: 30,
-                    }
-                }
-            ],            
-            priority: TASK1.control.corePriority.unset
-        }
-    ]);
+    const [stuff, updateStuff] = useState(courseData);
 
     function handleUpdatePriority(id, value) {
         // console.log("handleUpdatePriority",id, value);
