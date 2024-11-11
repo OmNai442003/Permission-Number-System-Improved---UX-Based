@@ -59,7 +59,7 @@ function Task2_Experiment_Course(props) {
     }
 
     return (
-        <div className="task2 experiment" key={props.course.id}>
+        <div className="course" key={props.course.id}>
 
             <div className="course-name">{props.course.name}</div>
             <div className="course-desc">{props.course.description}</div>
