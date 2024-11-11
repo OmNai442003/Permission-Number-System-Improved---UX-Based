@@ -1,0 +1,217 @@
+[
+    {
+        "id": 126,
+        "name": "Database Systems",
+        "description": "Database concepts; hierarchical and relational network models; object-oriented data models. Data normalization, data description languages, data manipulation languages, and query design.",
+        "sections":[
+            {
+                "lecture":{
+                    "days": ["T", "Th"],
+                    "startHour": 9,
+                    "startMinute": 30,
+                    "endHour": 10,
+                    "endMinute": 45
+                }
+            }
+        ],
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 152,
+        "name": "Software Engineering",
+        "description": "In-depth examination of techniques for specification, design, implementation, testing, and verification of software. Human-computer interfaces. Formal methods of software development. Use of software engineering tools for the development of substantial software projects.",
+        "sections":[
+            {
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 18,
+                    "startMinute": 0,
+                    "endHour": 18,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["T", "Th"],
+                    "startHour": 17,
+                    "startMinute": 0,
+                    "endHour": 17,
+                    "endMinute": 50
+                }
+            }
+        ],
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 154,
+        "name": "Simulation",
+        "description": "Simulation as a tool for the study of complex systems in computer science, statistics and operations research. Generating random variables. Review of principles behind and examples of simulation languages.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["M", "W"],
+                    "startHour": 17,
+                    "startMinute": 30,
+                    "endHour": 18,
+                    "endMinute": 45
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 157,
+        "name": "Computer Security",
+        "description": "Theoretical and hands-on, practical aspects of a broad umbrella of security topics with an emphasis on implementation of Attacks and Countermeasures. Topics include access control, vulnerabilities from malicious code, malicious web interactions, cryptography, secure engineering, and programming principles. Includes a number of hands-on experiments in a sandbox environment to understand the basic principles behind popular vulnerabilities and countermeasures.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 11,
+                    "startMinute": 0,
+                    "endHour": 11,
+                    "endMinute": 50
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 158,
+        "name": "Applied Biometric Security",
+        "description": "Applied security systems and biometrics. Principles of biometrics, the pattern recognition nature of biometric systems, different forms of biometrics, such as fingerprint, face, gait, keystroke etc.. Topics include feature extraction and implementation of authentication systems for biometric data, performance evaluation of biometrics systems, spoofing attacks of biometrics and spoof prevention methods. Some foundational classifiers and their use and vulnerabilities in biometric systems are also covered.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 15
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 159,
+        "name": "System and Cloud Security",
+        "description": "Fundamental cryptography algorithms, public/private key and RSA, system security models, password mechanisms, network authentication, PGP, SSL, WiFi security with WEP and WPA, VPN, and cloud security.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 12,
+                    "startMinute": 30,
+                    "endHour": 13,
+                    "endMinute": 45
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 164,
+        "name": "Artificial Intelligence",
+        "description": "Introduction to problem-solving methods from artificial intelligence. Production systems. Knowledge-based systems. Machine learning. Topics chosen from fuzzy logic, neural network models, genetic algorithms. Verification, validation, testing.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 9,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 165,
+        "name": "Bio-Inspired Machine Learning",
+        "description": "Bio-inspired machine learning is a field of study which seeks to solve computer science problems using models of biology. It relates to connectionism, social behavior, and emergence. This course focuses on selected bioinspired machine learning topics with an emphasis on optimization. Topics include meta-heuristics, evolutionary game theory, combinatorial optimization, gradient descent optimization, learning theories, and artificial neural networks.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 14,
+                    "startMinute": 0,
+                    "endHour": 15,
+                    "endMinute": 15
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 173,
+        "name": "Advanced Computer Graphics",
+        "description": "Visible surface algorithms, lighting and shading, textures, curves and surfaces, computer-aided design, advanced modeling techniques, solid modeling, advanced raster graphics architecture, advanced geometric and raster algorithms, user interface, ray tracing, animation techniques, and fractals.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["M", "W"],
+                    "startHour": 13,
+                    "startMinute": 0,
+                    "endHour": 13,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["F"],
+                    "startHour": 13,
+                    "startMinute": 0,
+                    "endHour": 14,
+                    "endMinute": 50
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 175,
+        "name": "Bioinformatics Computing",
+        "description": "Computational and algorithmic approaches in bioinformatics. Biological sequence alignment algorithms and heuristics, Study of bioinformatics tools, Combinatorial pattern matching, Motif finding, Gene prediction, Gene expression measurement, High-throughput sequencing technologies and data analysis methodologies and practices in molecular and micro biology, Selected topics from current research.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["M", "W"],
+                    "startHour": 14,
+                    "startMinute": 30,
+                    "endHour": 15,
+                    "endMinute": 45
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    },
+    {
+        "id": 178,
+        "name": "Game Development",
+        "description": "The aim of this course is to familiarize students with programing and development of game engine concepts including rendering, 2D graphics, shaders, animation, state machines, object management, sound input pseudorandom number generators, rule-based Al, scripted level generation, time-based coding, event driven coding, and debuggers. This course is being taught using code for a simple billboard 2D game with constrained camera motion.",
+        "sections": [
+            {
+                "lecture": {
+                    "days": ["M", "W"],
+                    "startHour": 16,
+                    "startMinute": 0,
+                    "endHour": 17,
+                    "endMinute": 15
+                }
+            }
+        ],            
+        "priority": 0,
+        "preference": 0
+    }
+
+]
+
+
