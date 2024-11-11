@@ -118,7 +118,10 @@ function Task2Page_Experiment() {
         dataRepo.recordTask({
             ...details,
             endDateTime,
-            data: courses
+            data: {
+                courses,
+                preference
+            }
         });
 
         navigate("/");
