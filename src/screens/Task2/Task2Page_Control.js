@@ -166,7 +166,7 @@ function Task2Page_Control() {
     return (
         <Container className="task-container">
             <div className="task-instruction">
-                <h1>Task 2 (Control)</h1>
+                <h1>Task 2A</h1>
                 <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
             </div>
 

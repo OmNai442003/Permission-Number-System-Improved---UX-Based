@@ -9,13 +9,13 @@ const LandingPage = () => {
             <p>
                 <Link to="/userprofile">User Profile</Link>
                 <br />
-                <Link to="/task1A">Task 1 (Control)</Link>
+                <Link to="/task1A">Task 1A</Link>
                 <br />
-                <Link to="/task1B">Task 1 (Experiment)</Link>
+                <Link to="/task1B">Task 1B</Link>
                 <br />
-                <Link to="/task2A">Task 2 (Control)</Link>
+                <Link to="/task2A">Task 2A</Link>
                 <br />
-                <Link to="/task2B">Task 2 (Experiment)</Link>
+                <Link to="/task2B">Task 2B</Link>
                 <br />
                 <Link to="/task4A">Task 4 (Control)</Link>
                 <br />

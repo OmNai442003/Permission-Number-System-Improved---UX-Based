@@ -167,7 +167,7 @@ function Task1Page_Experiment() {
     return (
         <Container className="task-container">
             <div className="task-instruction">
-                <h1>Task 1 (Experiment)</h1>
+                <h1>Task 1B</h1>
                 <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
             </div>
 
