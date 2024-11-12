@@ -59,7 +59,7 @@ const RadioLabel = styled.label`
 `;
 
 function Task4_Control_Course(props) {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(true);
 
     function toggleExpand() {
         setIsExpanded((prev) => !prev);
