@@ -89,6 +89,10 @@
 }
 
 .sortable-preference-course-desc {
+    font-size: 50%;
     font-style: italic;
     margin-bottom: 10px;
+}
+label{
+    display:block;
 }

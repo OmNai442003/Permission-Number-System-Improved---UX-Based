@@ -4,96 +4,22 @@ import Task2_Experiment_Course from "../../components/Task2/Task2_Experiment_Cou
 import Task2_Experiment_OrderableList from "../../components/Task2/Task2_Experiment_OrderableList";
 import { TASK2 } from "../../utility/task2Const";
 import Styled from "styled-components";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
+import courseData from "../../assets/json/task2ExperimentData.json"
 
 function Task2Page_Experiment() {
+    const navigate = useNavigate();
     const Container = Styled.div``;
+    const [details, updateDetails] = useState({
+        taskName: "Task2_Experiment",
+        startDateTime: new Date()
+    });
     const [state, setState] = useState({
         isSorting: false
     });
     const [preference, setPreference] = useState([]);
-    const [courses, updateCourses] = useState([
-        {
-            id: 1,
-            name: "Class A",
-            description: "A class on the topic of 'A'.",
-            sections:[
-                {
-                    lecture:{
-                        days: ['M', 'W', 'F'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 11,
-                        endMinute: 50,
-                    }
-                }
-            ],
-            priority: TASK2.experiment.corePriority.unset,
-            preference: 0
-        },
-        {
-            id: 2,
-            name: "Class B",
-            description: "A class on the topic of 'B'.",
-            sections:[
-                {
-                    id: 1,
-                    isSelected: false,
-                    lecture: {
-                        days: ['T', 'Th'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 12,
-                        endMinute: 15,
-                    },
-                    lab: {
-                        days: ['M'],
-                        startHour: 9,
-                        startMinute: 0,
-                        endHour: 10,
-                        endMinute: 50
-                    }
-                },
-                {
-                    id: 2,
-                    isSelected: false,
-                    lecture: {
-                        days: ['M', 'W', 'F'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 11,
-                        endMinute: 50,
-                    },
-                    lab: {
-                        days: ['Th'],
-                        startHour: 13,
-                        startMinute: 0,
-                        endHour: 14,
-                        endMinute: 50
-                    }
-                }
-            ],
-            priority: TASK2.experiment.corePriority.unset,
-            preference: 0
-        },
-        {
-            id: 3,
-            name: "Class C",
-            description: "A class on the topic of 'C'.",
-            sections: [
-                {
-                    lecture: {
-                        days: ['W'],
-                        startHour: 14,
-                        startMinute: 0,
-                        endHour: 16,
-                        endMinute: 30,
-                    }
-                }
-            ],            
-            priority: TASK2.experiment.corePriority.unset,
-            preference: 0
-        }
-    ]);
+    const [courses, updateCourses] = useState(courseData);
 
     useEffect(() => {
         setPreference(courses.reduce(function(result, c) {
@@ -158,13 +84,6 @@ function Task2Page_Experiment() {
         });
     }
 
-    function print(e) {
-        e.preventDefault();
-        console.log(preference);
-        console.log(courses);
-
-    }
-
     function renderRow(course){
         return (
             <Task2_Experiment_Course
@@ -192,10 +111,26 @@ function Task2Page_Experiment() {
         setPreference(newPreference);
     }
 
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            endDateTime,
+            data: {
+                courses,
+                preference
+            }
+        });
+
+        navigate("/");
+    }
+
     return (
         <Container className="task-container">
             <div className="task-instruction">
-                            <h1>Task 2 (Experiment)</h1>
+                            <h1>Task 2B</h1>
                             <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
                         </div>
 
@@ -228,19 +163,14 @@ function Task2Page_Experiment() {
                         <br />
 
                         <button onClick={() => handleUpdateSortingState(false)}>Back</button>
+                        <br />
+                        <br />
+
+
+                        <button onClick={save}>Save</button>
                     </>
                 )
             }
-            
-
-            
-
-            <br />
-            <br />
-
-
-            <button onClick={print}>Debug to Console</button>
-
         </Container>
     )
 }

@@ -2,94 +2,19 @@ import { useState } from "react";
 import Task1_Experiment_Course from "../../components/Task1/Task1_Experiment_Course";
 import { TASK1 } from "../../utility/task1Const";
 import Styled from "styled-components";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
+import courseData from "../../assets/json/task1ExperimentData.json"
 
 function Task1Page_Experiment() {
+    const navigate = useNavigate();
     const Container = Styled.div``;
-    const [stuff, updateStuff] = useState([
-        {
-            id: 1,
-            name: "Class A",
-            description: "A class on the topic of 'A'.",
-            sections:[
-                {
-                    id:1,
-                    isEnabled: true,
-                    isSelected: false,
-                    lecture:{
-                        days: ['M', 'W', 'F'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 11,
-                        endMinute: 50,
-                    }
-                }
-            ],
-        },
-        {
-            id: 2,
-            name: "Class B",
-            description: "A class on the topic of 'B'.",
-            sections:[
-                {
-                    id: 1,
-                    isEnabled: true,
-                    isSelected: false,
-                    lecture: {
-                        days: ['T', 'Th'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 12,
-                        endMinute: 15,
-                    },
-                    lab: {
-                        days: ['M'],
-                        startHour: 9,
-                        startMinute: 0,
-                        endHour: 10,
-                        endMinute: 50
-                    }
-                },
-                {
-                    id: 2,
-                    isEnabled: true,
-                    isSelected: false,
-                    lecture: {
-                        days: ['M', 'W', 'F'],
-                        startHour: 11,
-                        startMinute: 0,
-                        endHour: 11,
-                        endMinute: 50,
-                    },
-                    lab: {
-                        days: ['Th'],
-                        startHour: 13,
-                        startMinute: 0,
-                        endHour: 14,
-                        endMinute: 50
-                    }
-                }
-            ],
-        },
-        {
-            id: 3,
-            name: "Class C",
-            description: "A class on the topic of 'C'.",
-            sections: [
-                {
-                    id: 1,
-                    isEnabled: true,
-                    isSelected: false,
-                    lecture: {
-                        days: ['W'],
-                        startHour: 14,
-                        startMinute: 0,
-                        endHour: 16,
-                        endMinute: 30,
-                    }
-                }
-            ],            
-        }
-    ]);
+    const [details, updateDetails] = useState({
+        taskName: "Task1_Experiment",
+        startDateTime: new Date()
+    });    
+
+    const [stuff, updateStuff] = useState(courseData);
 
     function handleUpdateSection(courseId, section) {
         console.log("handleUpdateSection", courseId, section);
@@ -145,11 +70,15 @@ function Task1Page_Experiment() {
     }
 
     function sectionsOverlap(selectedList, section){
-        console.log("sectionsOverlap", selectedList, section);
+        // console.log("sectionsOverlap", selectedList, section);
         // Does section occur during any of the items in selectedList?
         for(let i =0; i < selectedList.length; i++){
+            // console.log("sectionsOverlapTesting", selectedList[i].courseId)
             // Stop if this section is one of the selectedList sections
-            if(selectedList[i].courseId === section.courseId) return false;
+            if(selectedList[i].courseId === section.courseId) {
+                if (selectedList[i].id === section.id) return false;
+                return true;
+            }
 
 
             // Check lecture
@@ -212,11 +141,6 @@ function Task1Page_Experiment() {
         return false;
     }
 
-    function print(e) {
-        e.preventDefault();
-        console.log(stuff);
-
-    }
     function renderRow(course){
         return (
             <Task1_Experiment_Course
@@ -227,10 +151,23 @@ function Task1Page_Experiment() {
         );
     };
 
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            endDateTime,
+            data: stuff
+        });
+
+        navigate("/");
+    }
+
     return (
         <Container className="task-container">
             <div className="task-instruction">
-                <h1>Task 1 (Experiment)</h1>
+                <h1>Task 1B</h1>
                 <p>For each course you are trying to sign up for, please answer the one or two questions about that course.  If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
             </div>
 
@@ -240,7 +177,7 @@ function Task1Page_Experiment() {
 
             <br />
             <br />
-            <button onClick={print}>Debug to Console</button>
+            <button onClick={save}>Save</button>
 
         </Container>
     )
