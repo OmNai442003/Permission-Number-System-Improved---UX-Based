@@ -1,29 +1,287 @@
 [
     {
-        "id": 1,
-        "name": "Class A",
-        "description": "A class on the topic of 'A'.",
+        "id": 40,
+        "name": "Introduction to Programming and Problem Solving",
+        "description": "Introduction to problem solving, algorithm development, procedural and data abstraction; program design, coding, debugging, testing and documentation; a high-level programming language.",
+        "prerequisites": [],
         "sections": [
             {
+                "id": 1,
+                "isEnabled": true,
+                "isSelected": false,
                 "lecture": {
                     "days": ["M", "W", "F"],
-                    "startHour": 11,
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 8,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["T"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 2,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 9,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["Th"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 3,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 9,
+                    "startMinute": 30,
+                    "endHour": 10,
+                    "endMinute": 45
+                },
+                "lab": {
+                    "days": ["F"],
+                    "startHour": 9,
+                    "startMinute": 0,
+                    "endHour": 10,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 4,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 9,
+                    "startMinute": 30,
+                    "endHour": 10,
+                    "endMinute": 45
+                },
+                "lab": {
+                    "days": ["F"],
+                    "startHour": 12,
+                    "startMinute": 0,
+                    "endHour": 13,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 5,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 10,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["T"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 11,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 6,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 10,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["Th"],
+                    "startHour": 10,
                     "startMinute": 0,
                     "endHour": 11,
                     "endMinute": 50
                 }
             }
         ],
-        "priority": "unset",
-        "prerequisites": [] 
+        "priority": 0
     },
     {
-        "id": 2,
-        "name": "Class B",
-        "description": "A class on the topic of 'B'.",
+        "id": 41,
+        "name": "Introduction to Data Structures",
+        "description": "Programming methodology, program correctness. Review of data types. Data structures: linear and nonlinear structures, files. Implementation of data structures. Recursion. Searching and sorting.",
+        "prerequisites": [],
         "sections": [
             {
                 "id": 1,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 10,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["M"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 2,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 10,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["W"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 3,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 9,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["T"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 4,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 9,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["Th"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                }
+            }
+        ],
+        "priority": 0
+    },
+    {
+        "id": 60,
+        "name": "Foundations of Computer Science",
+        "description": "Abstraction, iteration, induction, recursion, complexity of programs, data models, and logic.",
+        "prerequisites": [],
+        "sections": [
+            {
+                "id": 1,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 12,
+                    "startMinute": 30,
+                    "endHour": 13,
+                    "endMinute": 45
+                }
+            },
+            {
+                "id": 2,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W"],
+                    "startHour": 16,
+                    "startMinute": 0,
+                    "endHour": 17,
+                    "endMinute": 15
+                }
+            }
+        ],
+        "priority": 0
+    },
+    {
+        "id": 80,
+        "name": "Introduction to Computer Systems",
+        "description": "Computer arithmetic. Von Neumann architecture. Instruction sets, data types, formats, addressing. Register and ALU organization. Memory hierarchy. I/O Bus organization. Study of one or more assembly languages. Basics of implementation of higher-level languages.",
+        "prerequisites": [],
+        "sections": [
+            {
+                "id": 1,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 17,
+                    "startMinute": 30,
+                    "endHour": 18,
+                    "endMinute": 45
+                }
+            },
+            {
+                "id": 2,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W"],
+                    "startHour": 17,
+                    "startMinute": 30,
+                    "endHour": 18,
+                    "endMinute": 45
+                }
+            }
+        ],
+        "priority": 0
+    },
+    {
+        "id": 113,
+        "name": "Introduction to Computer Organization",
+        "description": "Fundamental issues of computer design at register-transfer level. Logical design of basic combinational and sequential modules. Organization and design of major functional blocks: ALU, CPU, memory, cache, input/output, hard-wired and microprogrammed control. Simulation of computer organization. Introduction to high performance superscalar computer organization.",
+        "prerequisites": [],
+        "sections": [
+            {
+                "id": 1,
+                "isEnabled": true,
                 "isSelected": false,
                 "lecture": {
                     "days": ["T", "Th"],
@@ -33,15 +291,82 @@
                     "endMinute": 15
                 },
                 "lab": {
-                    "days": ["M"],
-                    "startHour": 9,
+                    "days": ["W"],
+                    "startHour": 10,
                     "startMinute": 0,
-                    "endHour": 10,
+                    "endHour": 11,
                     "endMinute": 50
                 }
             },
             {
                 "id": 2,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 11,
+                    "startMinute": 0,
+                    "endHour": 12,
+                    "endMinute": 15
+                },
+                "lab": {
+                    "days": ["W"],
+                    "startHour": 12,
+                    "startMinute": 0,
+                    "endHour": 13,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 3,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W"],
+                    "startHour": 16,
+                    "startMinute": 0,
+                    "endHour": 17,
+                    "endMinute": 15
+                },
+                "lab": {
+                    "days": ["M"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 11,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 4,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W"],
+                    "startHour": 16,
+                    "startMinute": 0,
+                    "endHour": 17,
+                    "endMinute": 15
+                },
+                "lab": {
+                    "days": ["M"],
+                    "startHour": 12,
+                    "startMinute": 0,
+                    "endHour": 13,
+                    "endMinute": 50
+                }
+            }
+        ],
+        "priority": 0
+    },
+    {
+        "id": 114,
+        "name": "Introduction to Operating Systems",
+        "description": "Operating system history and services. File systems. Memory management. Process management - concurrent processes, communication, semaphores, monitors, deadlocks. Resource management - processor and disk scheduling. Security and protection mechanisms.",
+        "prerequisites": [],
+        "sections": [
+            {
+                "id": 1,
+                "isEnabled": true,
                 "isSelected": false,
                 "lecture": {
                     "days": ["M", "W", "F"],
@@ -49,35 +374,174 @@
                     "startMinute": 0,
                     "endHour": 11,
                     "endMinute": 50
+                }
+            }
+        ],
+        "priority": 0
+    },
+    {
+        "id": 115,
+        "name": "Algorithms and Data Structures",
+        "description": "Review of basic data structures. Graph, search paths, and spanning trees. Algorithm design and analysis of sorting, merging, and searching. Memory management, hashing, dynamic storage allocation. Integration of data structures into system design.",
+        "prerequisites": [],
+        "sections": [
+            {
+                "id": 1,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
                 },
                 "lab": {
-                    "days": ["Th"],
-                    "startHour": 13,
+                    "days": ["W"],
+                    "startHour": 10,
                     "startMinute": 0,
-                    "endHour": 14,
+                    "endHour": 11,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 2,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["W"],
+                    "startHour": 12,
+                    "startMinute": 0,
+                    "endHour": 13,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 3,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["F"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 11,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 4,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["T", "Th"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["F"],
+                    "startHour": 12,
+                    "startMinute": 0,
+                    "endHour": 13,
                     "endMinute": 50
                 }
             }
         ],
-        "priority": "unset",
-        "prerequisites": [1] 
+        "priority": 0
     },
     {
-        "id": 3,
-        "name": "Class C",
-        "description": "A class on the topic of 'C'.",
+        "id": 117,
+        "name": "Structures of Programming Languages",
+        "description": "General concepts and paradigms of programming languages; scope and binding rules, applications and implementations of language concepts. Languages selected from: ADA, ICON, Miranda, ML, MODULA 2, OCCAM 2, PROLOG, LISP, Scheme, Smalltalk.",
+        "prerequisites": [],
         "sections": [
             {
+                "id": 1,
+                "isEnabled": true,
+                "isSelected": false,
                 "lecture": {
-                    "days": ["W"],
-                    "startHour": 14,
+                    "days": ["M", "W", "F"],
+                    "startHour": 9,
                     "startMinute": 0,
-                    "endHour": 16,
-                    "endMinute": 30
+                    "endHour": 9,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["M"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 11,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 2,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 9,
+                    "startMinute": 0,
+                    "endHour": 9,
+                    "endMinute": 50
+                },
+                "lab": {
+                    "days": ["M"],
+                    "startHour": 12,
+                    "startMinute": 0,
+                    "endHour": 13,
+                    "endMinute": 50
                 }
             }
         ],
-        "priority": "unset",
-        "prerequisites": [1, 2]
+        "priority": 0
+    },
+    {
+        "id": 119,
+        "name": "Introduction to Formal Languages and Automata",
+        "description": "Strings, languages, and fundamental proof techniques. Regular expressions, finite automata, and their properties, constructions, and relationships. Introduction to context-free languages and Turing Machines.",
+        "prerequisites": [],
+        "sections": [
+            {
+                "id": 1,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 8,
+                    "startMinute": 0,
+                    "endHour": 8,
+                    "endMinute": 50
+                }
+            },
+            {
+                "id": 2,
+                "isEnabled": true,
+                "isSelected": false,
+                "lecture": {
+                    "days": ["M", "W", "F"],
+                    "startHour": 10,
+                    "startMinute": 0,
+                    "endHour": 10,
+                    "endMinute": 50
+                }
+            }
+        ],
+        "priority": 0
     }
 ]
