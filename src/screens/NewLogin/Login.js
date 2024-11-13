@@ -24,26 +24,34 @@ const Login = () => {
     };
 
     return (
-<div>
-    <div className='Navbar'>
-<Navbar />
-    </div>
-<form className='userForm' onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">Login</button>
-        </form>
-</div>
+        <div>
+            <div className='Navbar'>
+                <Navbar />
+            </div>
+            <div className='form'>
+                <form onSubmit={handleSubmit}>
+                    <div className='usernameArea'>
+                        <div className='commonClass'>Username</div>
+                        <input
+                            className='genralInput commonClass border border-secondary-subtle'
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </div>
+                    <div className='passwordArea'>
+                    <div className='commonClass'>Password</div>
+                        <input
+                            className='genralInput commonClass border border-secondary-subtle'
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <button className='genralInput commonClass border border-light-subtle' type="submit">Login</button>
+                </form>
+            </div>
+        </div>
     );
 };
 
