@@ -18,7 +18,7 @@ function Navbar({name, stid}) {
           </ul>
           {/* Details */}
           <div className='studentDetails'>
-            <div className='greetings'>Hello {name} !</div>
+            <div className='greetings'> {name ? `Hello ${name} !` : ''} </div>
             <div className='stid'>{stid}</div>
           </div>
         </div>

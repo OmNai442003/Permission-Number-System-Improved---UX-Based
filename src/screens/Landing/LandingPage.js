@@ -1,28 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
+import userDataAll from '../../assets/json/data.json';
 
 const LandingPage = () => {
+    const receivedLocation = useLocation();
+    const { userId } = receivedLocation.state || {};
+    const userData = userDataAll.find((user) => user.id === +userId);
     return (
         <>
+            <Navbar name={userData.name} stid={userData.id} />
             <p>
-                This is the default landing page meant to allow navigation to different components as we start to build.
+                Welcome to the landing page! Here, you can navigate to different components as we continue building.
             </p>
-            <p>
-                <Link to="/userprofile">User Profile</Link>
-                <br />
-                <Link to="/task1A">Task 1A</Link>
-                <br />
-                <Link to="/task1B">Task 1B</Link>
-                <br />
-                <Link to="/task2A">Task 2A</Link>
-                <br />
-                <Link to="/task2B">Task 2B</Link>
-                <br />
-                <Link to="/task4A">Task 4 (Control)</Link>
-                <br />
-                <Link to="/task4B">Task 4 (Experiment)</Link>
-            </p>
+            <nav>
+                <ul>
+                    <li><Link to="/userprofile" state={{ userInfo: userData }} >User Profile</Link></li>
+                    <li><Link to="/task1A">Task 1 (Control)</Link></li>
+                    <li><Link to="/task1B">Task 1 (Experiment)</Link></li>
+                    <li><Link to="/task2A">Task 2 (Control)</Link></li>
+                    <li><Link to="/task2B">Task 2 (Experiment)</Link></li>
+                    <li><Link to="/task4A">Task 4 (Control)</Link></li>
+                    <li><Link to="/task4B">Task 4 (Experiment)</Link></li>
+                </ul>
+            </nav>
         </>
-    )
+    );
 }
 
-export default LandingPage
+export default LandingPage;
