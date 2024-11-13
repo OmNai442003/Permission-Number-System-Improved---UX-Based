@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import userDataAll from '../../assets/json/data.json';
 import './landingPage.style.css'
-import BoxCard from "../../components/BoxCard/BoxCard";
+import BoxDisplayCard from "../../components/BoxDisplayCard/BoxDisplayCard";
 
 const LandingPage = () => {
     const receivedLocation = useLocation();
@@ -11,7 +11,7 @@ const LandingPage = () => {
     return (
         <>
             <Navbar name={userData.name} stid={userData.id} />
-            <BoxCard />
+            <BoxDisplayCard />
             <p>
                 Welcome to the landing page! Here, you can navigate to different components as we continue building.
             </p>
