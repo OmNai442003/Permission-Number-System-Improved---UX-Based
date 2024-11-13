@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import userDataAll from '../../assets/json/data.json';
+import './landingPage.style.css'
+import BoxCard from "../../components/BoxCard/BoxCard";
 
 const LandingPage = () => {
     const receivedLocation = useLocation();
@@ -9,11 +11,12 @@ const LandingPage = () => {
     return (
         <>
             <Navbar name={userData.name} stid={userData.id} />
+            <BoxCard />
             <p>
                 Welcome to the landing page! Here, you can navigate to different components as we continue building.
             </p>
             <nav>
-                <ul>
+                <ul className="listTile">
                     <li><Link to="/userprofile" state={{ userInfo: userData }} >User Profile</Link></li>
                     <li><Link to="/task1A">Task 1 (Control)</Link></li>
                     <li><Link to="/task1B">Task 1 (Experiment)</Link></li>

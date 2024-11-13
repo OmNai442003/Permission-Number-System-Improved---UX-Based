@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import users from '../../assets/json/userRecords.json';
-import './loginStyle.css'
+import './login.style.css'
 import Navbar from '../../components/Navbar/Navbar';
 
 const Login = () => {
