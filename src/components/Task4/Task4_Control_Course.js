@@ -103,7 +103,7 @@ function Task4_Control_Course(props) {
     return (
         <CourseContainer>
             <CourseHeader onClick={toggleExpand}>
-                <CourseName>{props.course.name}</CourseName>
+                <CourseName>CSCI {props.course.id} {props.course.name}</CourseName>
                 <ToggleButton onClick={(e) => { e.stopPropagation(); toggleExpand(); }}>
                     {isExpanded ? "-" : "+"}
                 </ToggleButton>
@@ -118,7 +118,7 @@ function Task4_Control_Course(props) {
                             <ul>
                                 {props.course.prerequisites.map(prereqId => {
                                     const prereqCourse = props.allCourses.find(course => course.id === prereqId);
-                                    return prereqCourse && <li key={prereqId}>{prereqCourse.name}</li>;
+                                    return prereqCourse && <li key={prereqId}>CSCI {prereqCourse.id} {prereqCourse.name}</li>;
                                 })}
                             </ul>
                         </div>

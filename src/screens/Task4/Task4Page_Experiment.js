@@ -4,6 +4,9 @@ import { TASK4 } from "../../utility/task4Const";
 import styled from "styled-components";
 import coursesData from "../../assets/json/courses.json";
 import userData from "../../assets/json/data.json";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
+
 
 const Container = styled.div`
     padding: 20px;
@@ -29,6 +32,12 @@ const Button = styled.button`
 `;
 
 function Task4Page_Experiment() {
+    const navigate = useNavigate();
+    const [details, updateDetails] = useState({
+        taskName: "Task4_Control",
+        startDateTime: new Date()
+    });
+
     const [course, updateCourse] = useState([]);
     const [user, setUser] = useState(null);
 
@@ -81,6 +90,19 @@ function Task4Page_Experiment() {
         console.log(course);
     }
 
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            endDateTime,
+            data: course
+        });
+
+        navigate("/");
+    }
+
     return (
         <Container>
             <Header>Task 4 (Experiment)</Header>
@@ -100,7 +122,7 @@ function Task4Page_Experiment() {
                     handleUpdateSection={handleUpdateSection}
                 />
             ))}
-            <Button onClick={print}>Debug to Console</Button>
+            <Button onClick={save}>Save</Button>
         </Container>
     );
 }

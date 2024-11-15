@@ -12,11 +12,24 @@
         "emergencycontactnumber": "(987) 987 9870",
         "completedCourses": [
             {
-                "id": 1,
-                "name": "Class A",
+                "id": 40,
+                "name": "Introduction to Programming and Problem Solving",
+                "completionDate": "2023-05-15",
+                "grade": "A"
+            },
+            {
+                "id": 41,
+                "name": "Introduction to Data Structures",
+                "completionDate": "2023-05-15",
+                "grade": "A"
+            },
+            {
+                "id": 60,
+                "name": "Foundations of Computer Science",
                 "completionDate": "2023-05-15",
                 "grade": "A"
             }
+            
         ]
     },
     {

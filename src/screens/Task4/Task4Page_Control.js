@@ -3,6 +3,8 @@ import Task4_Control_Course from "../../components/Task4/Task4_Control_Course";
 import { TASK4 } from "../../utility/task4Const";
 import styled from "styled-components";
 import coursesData from "../../assets/json/courses.json";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
     padding: 20px;
@@ -29,7 +31,12 @@ const Button = styled.button`
 
 function Task4Page_Control() {
    
+    const navigate = useNavigate();
     const [course, updateCourse] = useState([]);
+    const [details, updateDetails] = useState({
+        taskName: "Task4_Control",
+        startDateTime: new Date()
+    });
 
     useEffect(() => {
         // Map through the imported courses and set the priority
@@ -66,6 +73,19 @@ function Task4Page_Control() {
         console.log(course);
     }
 
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            endDateTime,
+            data: course
+        });
+
+        navigate("/");
+    }
+
     return (
         <Container>
             <Header>Task 4 (Control)</Header>
@@ -80,7 +100,7 @@ function Task4Page_Control() {
                     handleUpdateSection={handleUpdateSection}
                 />
             ))}
-            <Button onClick={print}>Debug to Console</Button>
+            <Button onClick={save}>Save</Button>
         </Container>
     );
 }
