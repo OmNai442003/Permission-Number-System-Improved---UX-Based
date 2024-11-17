@@ -11,7 +11,12 @@ const LandingPage = () => {
     return (
         <>
             <Navbar name={userData.name} stid={userData.id} />
-            <BoxDisplayCard />
+            <div className="displayBoxContainer">
+                <Link to="/userprofile" state={{ userInfo: userData }} >
+                    <BoxDisplayCard />
+                </Link>
+
+            </div>
             <p>
                 Welcome to the landing page! Here, you can navigate to different components as we continue building.
             </p>

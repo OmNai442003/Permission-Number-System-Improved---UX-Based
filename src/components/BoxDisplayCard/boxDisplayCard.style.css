@@ -1,22 +1,25 @@
 .links {
-    background-color: blueviolet;
-    font-size: 18px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
 }
 
 .boxCard {
-    height: 170px;
-    width: 170px;
-    background-color: aquamarine;
+    margin: 10px;
+    height: 180px;
+    width: 180px;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
 }
 
 .imageTile {
     margin-top: 10px;
-background-color: aqua;
+    display: flex;
+    justify-content: center;
 }
 
 img {
-    height: 120px;
-    width: 120px;
+    height: 140px;
+    width: 175px;
 }

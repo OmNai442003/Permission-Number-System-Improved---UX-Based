@@ -1,3 +1,10 @@
-.listTile{
+.listTile {
     list-style: none;
+}
+
+.displayBoxContainer {
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
 }

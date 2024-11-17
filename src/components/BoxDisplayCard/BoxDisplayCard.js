@@ -6,7 +6,7 @@ export default function BoxDisplayCard() {
     return (
         <div>
             <div className='boxCard'>
-                <div className='links'>Link to be added</div>
+                <div className='links'>VIA PROPS</div>
                 <div className='imageTile'>
                     <img src={imageSrc} alt="csu fresno logo" className='img' />
                 </div>

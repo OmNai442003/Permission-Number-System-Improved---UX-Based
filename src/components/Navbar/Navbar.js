@@ -4,7 +4,7 @@ import './Navbar.css'
 
 function Navbar({name, stid}) {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar customNavBarStyle navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <img src={logo} alt="csu fresno logo" className='logo' />
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
