@@ -21,6 +21,7 @@ function UserProfile() {
         </div>
         <section className='container'>
           <DisplayCards name={"Student Id"} value={userInfo.id} />
+          <DisplayCards name={"Major"} value={userInfo.major} />
           <DisplayCards name={"E-mail Id"} value={userInfo.emailId} />
           <DisplayCards name={"SSN"} value={userInfo.ssn} />
           <DisplayCards name={"Course"} value={userInfo.course} />

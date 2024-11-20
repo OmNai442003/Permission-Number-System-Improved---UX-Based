@@ -1,0 +1,16 @@
+.headerOfTask {
+    font-size: 2em;
+    color: #333;
+}
+
+.task3Fileds {
+    width: 800px;
+    margin: 0px 0px 20px 0px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.formTitle{
+    font-size: 18px;
+}
