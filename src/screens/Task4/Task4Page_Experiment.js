@@ -34,7 +34,7 @@ const Button = styled.button`
 function Task4Page_Experiment() {
     const navigate = useNavigate();
     const [details, updateDetails] = useState({
-        taskName: "Task4_Control",
+        taskName: "Task4_Experiment",
         startDateTime: new Date()
     });
 
