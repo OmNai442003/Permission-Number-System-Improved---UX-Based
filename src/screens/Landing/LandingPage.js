@@ -23,14 +23,14 @@ const LandingPage = () => {
             <nav>
                 <ul className="listTile">
                     <li><Link to="/userprofile" state={{ userInfo: userData }} >User Profile</Link></li>
-                    <li><Link to="/task1A">Task 1 (Control)</Link></li>
-                    <li><Link to="/task1B">Task 1 (Experiment)</Link></li>
-                    <li><Link to="/task2A">Task 2 (Control)</Link></li>
-                    <li><Link to="/task2B">Task 2 (Experiment)</Link></li>
-                    <li><Link to="/task3A">Task 3 (Control)</Link></li>
-                    <li><Link to="/task3B" state={{ userInfo: userData }} >Task 3 (Experiment)</Link></li>
-                    <li><Link to="/task4A">Task 4 (Control)</Link></li>
-                    <li><Link to="/task4B">Task 4 (Experiment)</Link></li>
+                    <li><Link to="/task1A">Task 1A</Link></li>
+                    <li><Link to="/task1B">Task 1B</Link></li>
+                    <li><Link to="/task2A">Task 2A</Link></li>
+                    <li><Link to="/task2B">Task 2B</Link></li>
+                    <li><Link to="/task3A">Task 3A</Link></li>
+                    <li><Link to="/task3B" state={{ userInfo: userData }} >Task 3B</Link></li>
+                    <li><Link to="/task4A">Task 4A</Link></li>
+                    <li><Link to="/task4B">Task 4B</Link></li>
                 </ul>
             </nav>
         </>
