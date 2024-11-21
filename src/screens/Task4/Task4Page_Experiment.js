@@ -6,7 +6,7 @@ import coursesData from "../../assets/json/courses.json";
 import userData from "../../assets/json/data.json";
 import * as dataRepo from "../../utility/dataRepo";
 import { useNavigate } from "react-router-dom";
-
+import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
     padding: 20px;
@@ -32,6 +32,8 @@ const Button = styled.button`
 `;
 
 function Task4Page_Experiment() {
+    const location = useLocation();
+    const { userInfo } = location.state;
     const navigate = useNavigate();
     const [details, updateDetails] = useState({
         taskName: "Task4_Experiment",
@@ -100,7 +102,7 @@ function Task4Page_Experiment() {
             data: course
         });
 
-        navigate("/");
+        navigate("/landing", { state: { userId: userInfo.id } });
     }
 
     return (

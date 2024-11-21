@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState, React } from "react";
 import * as dataRepo from "../../utility/dataRepo";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
     padding: 20px;
@@ -13,6 +14,8 @@ function Task3Page_Control() {
     
     const navigate = useNavigate();
     // Initialize state for form fields
+    const location = useLocation();
+    const { userInfo } = location.state;
     const [lastName, setLastName] = useState('');
     const [firstName, setFirstName] = useState('');
     const [major, setMajor] = useState('');
@@ -35,7 +38,7 @@ function Task3Page_Control() {
             endDateTime
         });
 
-        navigate("/");
+        navigate("/landing", { state: { userId: userInfo.id } });
     }
     return (
         <Container>

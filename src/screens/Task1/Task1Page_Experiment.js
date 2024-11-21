@@ -5,8 +5,11 @@ import Styled from "styled-components";
 import * as dataRepo from "../../utility/dataRepo";
 import { useNavigate } from "react-router-dom";
 import courseData from "../../assets/json/task1ExperimentData.json"
+import { useLocation } from 'react-router-dom';
 
 function Task1Page_Experiment() {
+    const location = useLocation();
+    const { userInfo } = location.state;
     const navigate = useNavigate();
     const Container = Styled.div``;
     const [details, updateDetails] = useState({
@@ -161,7 +164,7 @@ function Task1Page_Experiment() {
             data: stuff
         });
 
-        navigate("/");
+        navigate("/landing", { state: { userId: userInfo.id } });
     }
 
     return (

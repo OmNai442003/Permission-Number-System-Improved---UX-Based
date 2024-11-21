@@ -29,7 +29,7 @@ function Task3Page_Experiment() {
             endDateTime
         });
 
-        navigate("/");
+          navigate("/landing", { state: { userId: userInfo.id } });
     }
     return (
         <Container>
