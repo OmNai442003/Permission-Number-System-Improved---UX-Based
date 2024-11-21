@@ -33,7 +33,7 @@ function Task3Page_Experiment() {
     }
     return (
         <Container>
-            <div className="headerOfTask">Task 3(Experiiment)</div>
+            <div className="headerOfTask">Task 3B</div>
             <div className='formExp'>
                 <form>
                     <div className='formTitle'>Last Name</div>

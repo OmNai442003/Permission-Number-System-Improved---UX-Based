@@ -91,7 +91,7 @@ function Task4Page_Control() {
 
     return (
         <Container>
-            <Header>Task 4 (Control)</Header>
+            <Header>Task 4A</Header>
             <p>For each course you are trying to sign up for, please answer the one or two questions about that course. If you don't plan to take a particular course, just leave the question(s) about it unanswered.</p>
             <hr />
             {course.map(item => (

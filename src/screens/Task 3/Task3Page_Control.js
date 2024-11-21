@@ -42,7 +42,7 @@ function Task3Page_Control() {
     }
     return (
         <Container>
-            <div className="headerOfTask">Task 3(Control)</div>
+            <div className="headerOfTask">Task 3A</div>
             <div className='formControl'>
             <form onSubmit={save}>
                     <div className='formTitle'>Last Name</div>
