@@ -5,8 +5,11 @@ import Styled from "styled-components";
 import * as dataRepo from "../../utility/dataRepo";
 import { useNavigate } from "react-router-dom";
 import courseData from "../../assets/json/task2ControlData.json"
+import { useLocation } from 'react-router-dom';
 
 function Task2Page_Control() {
+    const location = useLocation();
+    const { userInfo } = location.state;
     const navigate = useNavigate();
     const Container = Styled.div``;
     const [details, updateDetails] = useState({
@@ -79,7 +82,7 @@ function Task2Page_Control() {
             data: courses
         });
 
-        navigate("/");
+        navigate("/landing", { state: { userId: userInfo.id } });
     }
 
     return (

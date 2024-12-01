@@ -6,7 +6,7 @@ import coursesData from "../../assets/json/courses.json";
 import userData from "../../assets/json/data.json";
 import * as dataRepo from "../../utility/dataRepo";
 import { useNavigate } from "react-router-dom";
-
+import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
     padding: 20px;
@@ -32,9 +32,11 @@ const Button = styled.button`
 `;
 
 function Task4Page_Experiment() {
+    const location = useLocation();
+    const { userInfo } = location.state;
     const navigate = useNavigate();
     const [details, updateDetails] = useState({
-        taskName: "Task4_Control",
+        taskName: "Task4_Experiment",
         startDateTime: new Date()
     });
 
@@ -100,12 +102,12 @@ function Task4Page_Experiment() {
             data: course
         });
 
-        navigate("/");
+        navigate("/landing", { state: { userId: userInfo.id } });
     }
 
     return (
         <Container>
-            <Header>Task 4 (Experiment)</Header>
+            <Header>Task 4B</Header>
             <p>
                 For each course you are trying to sign up for, please answer the
                 one or two questions about that course. If you don't plan to take a

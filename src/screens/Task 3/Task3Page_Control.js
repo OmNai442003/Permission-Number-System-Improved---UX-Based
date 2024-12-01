@@ -1,5 +1,9 @@
 import './task3.style.css'
 import styled from "styled-components";
+import { useState, React } from "react";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 const Container = styled.div`
     padding: 20px;
@@ -7,22 +11,75 @@ const Container = styled.div`
 `;
 
 function Task3Page_Control() {
+    
+    const navigate = useNavigate();
+    // Initialize state for form fields
+    const location = useLocation();
+    const { userInfo } = location.state;
+    const [lastName, setLastName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [major, setMajor] = useState('');
+    const [studentId, setStudentId] = useState('');
+    const [details, updateDetails] = useState({
+        taskName: "Task3_Control",
+        startDateTime: new Date()
+    });
+
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            lastName,
+            firstName,
+            major,
+            studentId,
+            endDateTime
+        });
+
+        navigate("/landing", { state: { userId: userInfo.id } });
+    }
     return (
         <Container>
-            <div className="headerOfTask">Task 3(Control)</div>
+            <div className="headerOfTask">Task 3A</div>
             <div className='formControl'>
-                <form>
-                <div className='formTitle'>Last Name</div>
-                    <input className='task3Fileds' type="text" placeholder='Student Last Name' />
+            <form onSubmit={save}>
+                    <div className='formTitle'>Last Name</div>
+                    <input
+                        className='task3Fileds'
+                        type="text"
+                        placeholder='Student Last Name'
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
                     <br />
                     <div className='formTitle'>First Name</div>
-                    <input className='task3Fileds' type="text" placeholder='Student First Name' />
+                    <input
+                        className='task3Fileds'
+                        type="text"
+                        placeholder='Student First Name'
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
                     <br />
                     <div className='formTitle'>Major</div>
-                    <input className='task3Fileds' type="text" placeholder='Major' />
+                    <input
+                        className='task3Fileds'
+                        type="text"
+                        placeholder='Major'
+                        value={major}
+                        onChange={(e) => setMajor(e.target.value)}
+                    />
                     <br />
                     <div className='formTitle'>Student Id</div>
-                    <input className='task3Fileds' type='text' placeholder='Student Id' />
+                    <input
+                        className='task3Fileds'
+                        type='text'
+                        placeholder='Student Id'
+                        value={studentId}
+                        onChange={(e) => setStudentId(e.target.value)}
+                    />
                     <br />
                     <button className='task3Button' type='submit'>Submit</button>
                 </form>

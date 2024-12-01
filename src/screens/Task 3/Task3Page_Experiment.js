@@ -1,7 +1,9 @@
-import React from 'react'
+import { useState, React } from "react";
 import { useLocation } from 'react-router-dom';
 import './task3.style.css'
 import styled from "styled-components";
+import * as dataRepo from "../../utility/dataRepo";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
     padding: 20px;
@@ -9,12 +11,29 @@ const Container = styled.div`
 `;
 
 function Task3Page_Experiment() {
+    const navigate = useNavigate();
+    const [details, updateDetails] = useState({
+        taskName: "Task3_Experiment",
+        startDateTime: new Date()
+    });
     const location = useLocation();
     const { userInfo } = location.state;
     const [firstName, lastName] = userInfo.name.split(' ');
+
+    function save(e){
+        e.preventDefault();
+        let endDateTime = new Date();
+
+        dataRepo.recordTask({
+            ...details,
+            endDateTime
+        });
+
+          navigate("/landing", { state: { userId: userInfo.id } });
+    }
     return (
         <Container>
-            <div className="headerOfTask">Task 3(Experiiment)</div>
+            <div className="headerOfTask">Task 3B</div>
             <div className='formExp'>
                 <form>
                     <div className='formTitle'>Last Name</div>
@@ -29,7 +48,7 @@ function Task3Page_Experiment() {
                     <div className='formTitle'>Student Id</div>
                     <input className='task3Fileds' type='text' value={userInfo.id} disabled />
                     <br />
-                    <button className='task3Button' type='submit'>Submit</button>
+                    <button className='task3Button' type='submit'onClick={save}>Submit</button>
                 </form>
             </div>
         </Container>
